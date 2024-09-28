@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Sell a Book</h1>
+
+<form method="post">
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" name="title" required placeholder="Enter the book title">
+    </div>
+    
+    <div>
+        <label for="author">Author:</label>
+        <input type="text" name="author" required placeholder="Enter the author's name">
+    </div>
+    
+    <div>
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" name="price" required placeholder="Enter the price">
+    </div>
+    
+    <div>
+        <label for="description">Description:</label>
+        <textarea name="description" placeholder="Enter a brief description of the book"></textarea>
+    </div>
+    
+    <div>
+        <label for="image">Image URL:</label>
+        <input type="text" name="image" placeholder="Optional: Enter an image URL">
+    </div>
+    
+    <button type="submit">Sell</button>
+</form>
+
+{% if session.get('message') %}
+    <p>{{ session.get('message') }}</p>
+{% endif %}
+{% endblock %}

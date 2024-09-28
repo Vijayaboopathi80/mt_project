@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Register</h1>
+
+<form method="post">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" required placeholder="Enter your username">
+    </div>
+    
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required placeholder="Enter your password">
+    </div>
+    
+    <button type="submit">Register</button>
+</form>
+
+{% if session.get('message') %}
+    <p class="feedback-message">{{ session.get('message') }}</p>
+{% endif %}
+{% endblock %}
